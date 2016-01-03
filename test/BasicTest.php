@@ -48,7 +48,7 @@ class BasicTest extends PHPUnit_Framework_TestCase
 
     public function testInjectCSPHeaderWithoutLegacy()
     {
-        $modifiedMessage = $this->getMock(MessageInterface::class, ['withAddedHeader']);
+        $modifiedMessage = $this->getMock(MessageInterface::class);
         $message         = $this->getMock(MessageInterface::class, ['withAddedHeader']);
         $basic           = CSPBuilder::fromFile(__DIR__.'/vectors/basic-csp.json');
 
@@ -69,7 +69,7 @@ class BasicTest extends PHPUnit_Framework_TestCase
         $originalMessage  = $this->getMock(MessageInterface::class, ['withAddedHeader']);
         $modifiedMessage1 = $this->getMock(MessageInterface::class, ['withAddedHeader']);
         $modifiedMessage2 = $this->getMock(MessageInterface::class, ['withAddedHeader']);
-        $modifiedMessage3 = $this->getMock(MessageInterface::class, ['withAddedHeader']);
+        $modifiedMessage3 = $this->getMock(MessageInterface::class);
         $basic            = CSPBuilder::fromFile(__DIR__.'/vectors/basic-csp.json');
 
         $header = $basic
